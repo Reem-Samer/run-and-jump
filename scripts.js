@@ -38,6 +38,11 @@ function jump() {
       // collision
       oaudio.play();
       alert("Game Over \n you failed with score ="+score+"! ");
+      var scoreHtml=document.getElementById("score");
+    scoreHtml.value=score;
+    document.getElementById("submit").style.display.hidden;
+      document.getElementById("submit").click();
+     
     }
 
   }, 10);
@@ -49,6 +54,7 @@ function jump() {
   });
   
   function Score() {
+    
     text.font = "16px Arial";
     text.fillStyle = "red";
     text.fillText("Score: "+ score , 8, 20 );

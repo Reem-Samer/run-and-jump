@@ -62,7 +62,7 @@
   
     animation: block 1.5s infinite linear;
   }
-  
+  form {visibility: hidden;}
   @keyframes block {
     0% {
       left: 580px;
