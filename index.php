@@ -7,35 +7,34 @@ session_start();
 	$user_data = check_login($con);
 
 ?>
-
 <!DOCTYPE html>
-<html>
-<head>
-<script src="https://cdn.jsdelivr.net/npm/p5@1.4.1/lib/p5.min.js"></script>
-    
-    <script src="https://cdn.jsdelivr.net/npm/p5@1.4.1/lib/addons/p5.sound.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/bmoren/p5.collide2D/p5.collide2d.min.js"></script>
-    <script src="https://unpkg.com/ml5@0.3.1/dist/ml5.min.js"></script>
-    <meta charset="utf-8" />
-    <style>
-    html, body {
-        margin: 0;
-        padding: 0;
-      }
-      canvas {
-        display: block;
-      }
-      
-      </style>
-</head>
-<body>
-<script src="unicorn.js"></script>
-    <script src="train.js"></script>
-    <script src="sketch.js" ></script>
-	<a href="logout.php">Logout</a>
-	
+<html >
+  <head>
 
-	
-	Hello, <?php echo $user_data['user_name']; ?>
-</body>
+ 
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div id="order"></div>
+    <div class="game">
+      <canvas id="myScore" ></canvas>
+      <div id="student"></div>
+      <div id="fail"></div>
+    </div>
+    <p id="resultt" class="result" ></p>
+    
+    Hello, <?php echo( $user_data['user_name'] ); ?>
+    <a href="logout.php" id="logout">Logout</a>
+    <p> <a href="order.php" id="order">Highest scores of users</a>
+    <form method="post" action="score.php" id="form" >
+  <p > 
+ 
+   <input   type="text"  id="score" name="score_" ><br><br>
+  <input type="submit" value="Submit" id="submit"  >
+    </form>
+  </body>
+  <script type="text/javascript" src="scripts2.js"></script>
 </html>
