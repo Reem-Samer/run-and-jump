@@ -388,8 +388,6 @@ session_start();
 </html>
 
 When the user presses log in, a query will be added that selects user data from the users' table based on the inserted username, then the inserted password with the stored password will be compared, if they are equal the user can log in otherwise the website will ask the user to try again.
-
-
 <?php
 
 $dbhost = "localhost";
