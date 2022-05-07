@@ -234,3 +234,5 @@ session_start();
 	</div>
 </body>
 </html>
+
+But if the user already had an account he has to login. The login form has an input type text to enter the username, and an input type password to enter the user password, The figures4 below shows the login.php file code.
