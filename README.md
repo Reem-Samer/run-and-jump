@@ -95,3 +95,12 @@ function jump() {
     jump();
     
   });
+  
+  
+# Business Logic:
+Business logic is the programming that manages communication between an end-user interface and a database. Business logic describes the sequence of operations associated with data in a database to carry out the business rule. In our project, we will talk about the structure of the database and the authentication step.
+# Database Structure:
+The database contains one table for users, when the user signs up, the database stores his/her unique id, name, password, date of account creation, and score with a default value of zero. When the user plays and gets a new score, his/her score the database updates the score to the last score the player gains.
+# Authentication Step:
+The player must enter his name and password to create an account, using a form. The form content has an input type text to enter his name, an input type password to enter his password and an input type submit to sign up.
+When the user presses sign up, the inserted data is processed in the signup.php file, see figers3 below, the username and password are taken from the form and stored in variables and the id is generated randomly, after that an insertion query is added to insert all these data to the database as a new row.
