@@ -18,4 +18,80 @@ The function jump ()and play() was used so that the student can start the game. 
 Cleartext has been included the clearRect() method sets the pixels in a rectangular area to transparent black. The upper left corner of the rectangle is at ( myScore.width, myScore.height), and its volume is specified by width and height the parameter had the width and length of the score.
 Finally, we used the file text, which is a fillText() is a method for a 2D drawing context. The fillText() method allows you to draw a text string in a format with the fill derived from the current fill pattern. Add to it the points earned by the student.
 A function has been created in the name of setInterval().It had the status of the student , F and how to stop the game When the student fails to jump from the F, we add the if condition so that the game will stop so that it will show "game over".
-The figure below shows the function.php file code;
+The figure below shows the function.php file code:
+const student = document.getElementById("student");
+const fail = document.getElementById("fail");
+let counter =0;
+var jaudio = new Audio('human-jump.mp3');
+var oaudio = new Audio('game-over.mp3');
+var myScore = document.getElementById("myScore");
+var text = myScore.getContext("2d");
+var score = 0;
+
+    alert(" Press ok to start!");
+    
+function jump() {
+  jaudio.play();
+    if (student.classList != "jump") {
+      student.classList.add("jump");
+      jaudio.play();
+      setTimeout(function () {
+        text.clearRect(0, 0, myScore.width, myScore.height);
+   //Update score
+        score++;
+        text.fillText("Score: " +score, 8, 20 );
+       
+        student.classList.remove("jump");
+      }, 300);
+    } 
+   
+  }
+
+
+  let isAlive = setInterval(function () {
+
+    // get current dino Y position
+    let studentTop = parseInt(window.getComputedStyle(student).getPropertyValue("top"));
+  
+    // get current cactus X position
+    let failleft = parseInt(
+      window.getComputedStyle(fail).getPropertyValue("left")
+    );
+   
+    // detect collision
+    if (failleft < 50 && failleft > 0 && studentTop >= 140) {
+      // collision
+      oaudio.play();
+      
+      alert("Game Over!"  );
+        if(score==0){
+            document.getElementById("fail").style.display = 'none';
+            var scoreHtml=document.getElementById("score");
+     
+    scoreHtml.value="0";
+    document.getElementById("submit").style.display.hidden;
+      document.getElementById("submit").click();
+      document.getElementById("fail").style.display = 'none';
+        }
+      else{ document.getElementById("fail").style.display = 'none';
+      
+      var scoreHtml=document.getElementById("score");
+     
+    scoreHtml.value=score;
+    document.getElementById("submit").style.display.hidden;
+      document.getElementById("submit").click();
+      document.getElementById("fail").style.display = 'none';
+      }
+    
+     
+
+      
+    }
+   
+  }, 10);
+   
+  document.addEventListener("keydown", function (event) {
+    
+    jump();
+    
+  });
