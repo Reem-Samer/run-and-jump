@@ -404,8 +404,7 @@ if(!$con = mysqli_connect($dbhost,$dbuser,$dbpass,$dbname))
 
 
 
-
-<?php
+when the user done playing he/she can logout from the game:
 
 session_start();
 
