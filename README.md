@@ -388,6 +388,18 @@ session_start();
 
 When the user presses log in, a query will be added that selects user data from the users' table based on the inserted username, then the inserted password with the stored password will be compared, if they are equal the user can log in otherwise the website will ask the user to try again.
 
+<?php
+
+$dbhost = "localhost";
+$dbuser = "root";
+$dbpass = "";
+$dbname = "login_sample_db";
+
+if(!$con = mysqli_connect($dbhost,$dbuser,$dbpass,$dbname))
+{
+
+	die("failed to connect!");
+}
 
 
 when the user done playing he/she can logout from the game:
