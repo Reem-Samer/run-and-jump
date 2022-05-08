@@ -234,7 +234,7 @@ session_start();
 </body>
 </html>
 
-But if the user already had an account he has to login. The login form has an input type text to enter the username, and an input type password to enter the user password.
+But if the user already had an account he has to login. The login form has an input type text to enter the username, and an input type password to enter the user password..
 
 <?php 
 
