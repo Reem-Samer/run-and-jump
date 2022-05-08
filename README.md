@@ -2,6 +2,8 @@
 ![Screenshot](college.png)
 
  In this project, we built a jump and run browser game that built into Google Chrome web browser. Our players had to avoid the F failure by jumping above it to achieve the higher score, all players can challenge each other and win by achieving the highest score.
+# Flowchart of the Game
+![flowchart](flowchart.png)
 
 # Look & Feel:
 In our game we wanted to do a related design to our life in college, so we set the character to be a student that wants to avoid obstacles which in this case is failing classes -getting an F in a class.
